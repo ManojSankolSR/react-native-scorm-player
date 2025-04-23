@@ -54,7 +54,6 @@ const ScormPlayer = (_a) => {
     }, []);
     return (<View style={styles.container}>
       {scormPlayerState.isLoading && (<View style={styles.loadingContainer}>
-          {/* <ActivityIndicator size="large" color="#0000ff" /> */}
           <Text style={styles.loadingText}>Loading SCORM content...</Text>
         </View>)}
       {scormPlayerState.error && (<View style={styles.errorContainer}>
@@ -64,6 +63,10 @@ const ScormPlayer = (_a) => {
                 uri: scormPlayerState.data.basePath +
                     "/" +
                     scormPlayerState.data.fileName,
+            }} renderLoading={() => {
+                return (<View>
+                <Text>Loading.....</Text>
+              </View>);
             }} style={styles.webView} injectedJavaScript={scormBridgeScript} javaScriptEnabled domStorageEnabled startInLoadingState onMessage={handleMessage} onLoadStart={() => {
                 setScormPlayerStateCallback("isLoading", true);
             }} cacheMode="LOAD_NO_CACHE" cacheEnabled={false} onLoadEnd={() => {

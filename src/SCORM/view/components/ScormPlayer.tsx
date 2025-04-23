@@ -78,7 +78,6 @@ const ScormPlayer: React.FC<ScormPlayerProps> = ({
     <View style={styles.container}>
       {scormPlayerState.isLoading && (
         <View style={styles.loadingContainer}>
-          {/* <ActivityIndicator size="large" color="#0000ff" /> */}
           <Text style={styles.loadingText}>Loading SCORM content...</Text>
         </View>
       )}
@@ -96,6 +95,13 @@ const ScormPlayer: React.FC<ScormPlayerProps> = ({
               scormPlayerState.data.basePath +
               "/" +
               scormPlayerState.data.fileName,
+          }}
+          renderLoading={() => {
+            return (
+              <View>
+                <Text>Loading.....</Text>
+              </View>
+            );
           }}
           style={styles.webView}
           injectedJavaScript={scormBridgeScript}
