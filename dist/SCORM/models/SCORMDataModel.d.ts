@@ -1,0 +1,31 @@
+export interface SCORMDataModel {
+    "cmi.core.student_id"?: string;
+    "cmi.core.student_name"?: string;
+    "cmi.core.lesson_location"?: string;
+    "cmi.core.lesson_status"?: "passed" | "completed" | "failed" | "incomplete" | "browsed" | "not attempted";
+    "cmi.core.score.raw"?: number;
+    "cmi.core.score.max"?: number;
+    "cmi.core.score.min"?: number;
+    "cmi.core.total_time"?: string;
+    "cmi.core.exit"?: "time-out" | "suspend" | "logout" | "";
+    "cmi.core.session_time"?: string;
+    "cmi.suspend_data"?: string;
+    "cmi.launch_data"?: string;
+    "cmi.interactions._count"?: number;
+    "cmi.interactions.n.id"?: string;
+    "cmi.interactions.n.type"?: string;
+    "cmi.interactions.n.timestamp"?: string;
+    "cmi.interactions.n.correct_responses._count"?: number;
+    "cmi.interactions.n.correct_responses.n.pattern"?: string;
+    "cmi.interactions.n.weighting"?: number;
+    "cmi.interactions.n.learner_response"?: string;
+    "cmi.interactions.n.result"?: string;
+    "cmi.interactions.n.latency"?: string;
+    "cmi.interactions.n.description"?: string;
+    "cmi.objectives._count"?: number;
+    "cmi.objectives.n.id"?: string;
+    "cmi.objectives.n.score.raw"?: number;
+    "cmi.objectives.n.score.max"?: number;
+    "cmi.objectives.n.score.min"?: number;
+    "cmi.objectives.n.status"?: "passed" | "failed" | "completed" | "incomplete" | "not attempted" | "browsed";
+}
