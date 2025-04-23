@@ -18,7 +18,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import WebView from "react-native-webview";
 import { ScormService } from "../../services/ScormService";
@@ -54,7 +54,7 @@ const ScormPlayer = (_a) => {
     }, []);
     return (<View style={styles.container}>
       {scormPlayerState.isLoading && (<View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#0000ff"/>
+          {/* <ActivityIndicator size="large" color="#0000ff" /> */}
           <Text style={styles.loadingText}>Loading SCORM content...</Text>
         </View>)}
       {scormPlayerState.error && (<View style={styles.errorContainer}>

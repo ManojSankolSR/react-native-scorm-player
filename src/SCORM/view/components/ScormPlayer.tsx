@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React, { use, useEffect, useRef, useState } from "react";
 import WebView, { WebViewProps } from "react-native-webview";
 import { ScormService } from "../../services/ScormService";
@@ -78,7 +78,7 @@ const ScormPlayer: React.FC<ScormPlayerProps> = ({
     <View style={styles.container}>
       {scormPlayerState.isLoading && (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#0000ff" />
+          {/* <ActivityIndicator size="large" color="#0000ff" /> */}
           <Text style={styles.loadingText}>Loading SCORM content...</Text>
         </View>
       )}
