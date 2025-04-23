@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import React, { use, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import WebView, { WebViewProps } from "react-native-webview";
 import { ScormService } from "../../services/ScormService";
 import {
