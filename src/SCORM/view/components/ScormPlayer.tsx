@@ -25,7 +25,7 @@ interface ScormPlayerInitialState {
   error: string | null;
 }
 
-const ScormPlayer = ({
+const ScormPlayer: React.FC<ScormPlayerProps> = ({
   scormUrl,
   webViewRef,
   API,
