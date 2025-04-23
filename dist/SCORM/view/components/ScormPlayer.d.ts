@@ -8,5 +8,5 @@ interface ScormPlayerProps extends WebViewProps {
     API: API;
     prevSCORMProgress: SCORMDataModel;
 }
-declare const ScormPlayer: ({ scormUrl, webViewRef, API, prevSCORMProgress, ...webViewProps }: ScormPlayerProps) => React.JSX.Element;
+declare const ScormPlayer: React.FC<ScormPlayerProps>;
 export default ScormPlayer;
