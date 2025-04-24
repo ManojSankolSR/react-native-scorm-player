@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import WebView, { WebViewProps } from "react-native-webview";
 import { ScormService } from "../../services/ScormService";
@@ -78,7 +78,7 @@ const ScormPlayer: React.FC<ScormPlayerProps> = ({
     <View style={styles.container}>
       {scormPlayerState.isLoading && (
         <View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Loading SCORM content...</Text>
+          <ActivityIndicator size={"small"} />
         </View>
       )}
       {scormPlayerState.error && (
@@ -95,13 +95,6 @@ const ScormPlayer: React.FC<ScormPlayerProps> = ({
               scormPlayerState.data.basePath +
               "/" +
               scormPlayerState.data.fileName,
-          }}
-          renderLoading={() => {
-            return (
-              <View>
-                <Text>Loading.....</Text>
-              </View>
-            );
           }}
           style={styles.webView}
           injectedJavaScript={scormBridgeScript}

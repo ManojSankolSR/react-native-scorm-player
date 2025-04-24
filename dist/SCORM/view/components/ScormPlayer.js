@@ -18,7 +18,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import WebView from "react-native-webview";
 import { ScormService } from "../../services/ScormService";
@@ -54,7 +54,7 @@ const ScormPlayer = (_a) => {
     }, []);
     return (<View style={styles.container}>
       {scormPlayerState.isLoading && (<View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Loading SCORM content...</Text>
+          <ActivityIndicator size={"small"}/>
         </View>)}
       {scormPlayerState.error && (<View style={styles.errorContainer}>
           <Text style={styles.errorText}>{scormPlayerState.error}</Text>
@@ -63,10 +63,6 @@ const ScormPlayer = (_a) => {
                 uri: scormPlayerState.data.basePath +
                     "/" +
                     scormPlayerState.data.fileName,
-            }} renderLoading={() => {
-                return (<View>
-                <Text>Loading.....</Text>
-              </View>);
             }} style={styles.webView} injectedJavaScript={scormBridgeScript} javaScriptEnabled domStorageEnabled startInLoadingState onMessage={handleMessage} onLoadStart={() => {
                 setScormPlayerStateCallback("isLoading", true);
             }} cacheMode="LOAD_NO_CACHE" cacheEnabled={false} onLoadEnd={() => {
