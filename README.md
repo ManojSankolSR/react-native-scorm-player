@@ -127,6 +127,8 @@ This mapping ensures compatibility with both SCORM 1.2 and SCORM 2004, but users
 
 The `SCORMDataModel` interface defines the SCORM data model elements, such as `cmi.core.student_id`, `cmi.core.lesson_status`, and more.
 
+For more details, refer to the [SCORM Run-Time Reference](https://scorm.com/scorm-explained/technical-scorm/run-time/run-time-reference/).
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request on GitHub.
